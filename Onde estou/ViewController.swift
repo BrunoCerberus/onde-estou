@@ -53,22 +53,28 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         lblLatitude.text = String(latitude)
         lblLongitude.text = String(longitude)
-        lblVelocidade.text = String(describing: locations.last!.speed)
+        if localizaUsuario.speed > 0 {
+            lblVelocidade.text = String(describing: locations.last!.speed)
+        }
         
         CLGeocoder().reverseGeocodeLocation(localizaUsuario) { (detalhesLocal, erro) in
             if erro == nil {
                 
                 if let _dadosLocal = detalhesLocal?.first {
-                    let thoroughfare = _dadosLocal.thoroughfare
-                    let subthoroughfare = _dadosLocal.subThoroughfare
-                    let localidade = _dadosLocal.locality
-                    let subLocal = _dadosLocal.subLocality
+                    let rua = _dadosLocal.thoroughfare
+                    let numero = _dadosLocal.subThoroughfare
+                    let estado = _dadosLocal.locality
+                    let cidade = _dadosLocal.subLocality
                     let codigoPostal = _dadosLocal.postalCode
-                    let pais = _dadosLocal.country!
-                    let bairro = _dadosLocal.administrativeArea
-                    let subBairro = _dadosLocal.subAdministrativeArea
+                    let pais = _dadosLocal.country
+                    let uf = _dadosLocal.administrativeArea
+                    let subUf = _dadosLocal.subAdministrativeArea
                     
-                    self.lblEndereco.text = "\(pais)"
+                    
+                    print("\n / rua: \(rua)\n / numero: \(numero)\n / estado: \(estado)\n / cidade: \(cidade)\n / CEP: \(codigoPostal)" +
+                        "\n / pais: \(pais)\n / uf: \(uf)\n / subUf: \(subUf)")
+                    
+                    self.lblEndereco.text = "\(rua) - \(numero) - \(estado) - \(cidade) - \(pais)"
                     
                 }
                 
