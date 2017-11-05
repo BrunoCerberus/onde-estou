@@ -22,6 +22,7 @@
 		ECC5C3E11FAEAAA100CEAD9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC5C3E41FAEAAA100CEAD9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECC5C3E61FAEAAA100CEAD9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECC5C3ED1FAEACAB00CEAD9E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 			children = (
 				ECC5C3D91FAEAAA100CEAD9E /* Onde estou */,
 				ECC5C3D81FAEAAA100CEAD9E /* Products */,
+				ECC5C3EC1FAEACAA00CEAD9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +64,14 @@
 				ECC5C3E61FAEAAA100CEAD9E /* Info.plist */,
 			);
 			path = "Onde estou";
+			sourceTree = "<group>";
+		};
+		ECC5C3EC1FAEACAA00CEAD9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECC5C3ED1FAEACAB00CEAD9E /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
